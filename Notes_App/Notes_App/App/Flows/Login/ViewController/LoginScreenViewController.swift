@@ -7,9 +7,15 @@
 
 import UIKit
 
-class LoginScreenViewController: UIViewController {
+class LoginScreenViewController: UIViewController, StoryBoarded {
+    
     @IBOutlet weak var welcomingText: UILabel?
-    @IBOutlet weak var enterButton: UIButton?
+    @IBOutlet weak var enterButton: UIButton!
+    @IBAction func enterButton(_ sender: Any) {
+        self.coordinator?.toTheNotesList()
+    }
+    
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +39,6 @@ class LoginScreenViewController: UIViewController {
             enterButton.setTitle(title, for: .normal)
         }
     }
+    
 }
 

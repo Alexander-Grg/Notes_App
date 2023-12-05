@@ -7,21 +7,35 @@
 
 import UIKit
 
-class NotesListViewController: UIViewController {
+class NotesListViewController: UIViewController, StoryBoarded {
 
     @IBOutlet weak var tableView: UITableView?
-    @IBOutlet weak var createNoteButton: UIButton?
+    var addNoteButton = UIBarButtonItem()
     
+    weak var coordinator: MainCoordinator?
+//    private let presenter: NotesListPresenterOutput
+    
+//    init(presenter: NotesListPresenterOutput) {
+//        self.presenter = presenter
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureUI()
+    }
+    
+    private func configureUI() {
+        self.setupNoteButton()
     }
     
     private func setupNoteButton() {
-        if let createNoteButton = createNoteButton {
-            createNoteButton.titleLabel?.text = "Add Note"
-        }
+        addNoteButton = UIBarButtonItem(title: "Add Note", style: .plain, target: self, action: #selector(createNotePressed))
+        self.navigationItem.rightBarButtonItem = addNoteButton
     }
 
 }
@@ -41,4 +55,11 @@ extension NotesListViewController: UITableViewDataSource {
     }
     
     
+}
+
+extension NotesListViewController: NotesListPresenterInput {
+    
+    @objc func createNotePressed() {
+        coordinator?.toTheNoteDetail()
+    }
 }
