@@ -14,9 +14,7 @@ protocol NotesListPresenterOutput: AnyObject {
 }
 
 final class NotesListPresenter {
-    
-    let notes: [NoteModel] = []
-    
+        
     weak var viewInput: (UIViewController & NotesListPresenterInput)?
 
     private func toNotesDetailScreen() {
