@@ -10,7 +10,7 @@ import UIKit
 class LoginScreenViewController: UIViewController, StoryBoarded {
     
     @IBOutlet weak var welcomingText: UILabel?
-    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var enterButton: UIButton?
     @IBAction func enterButton(_ sender: Any) {
         self.coordinator?.toTheNotesList()
     }

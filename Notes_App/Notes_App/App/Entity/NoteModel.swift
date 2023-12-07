@@ -7,14 +7,21 @@
 
 import Foundation
 
+final class TestSingleton {
+    static public let instance = TestSingleton()
+    var notes: [NoteModel] = []
+
+    private init() {}
+}
+
 struct NoteModel {
     
-    let noteText: String
     let noteTitle: String
+    let noteText: String
     let noteID = UUID()
     
-    init(noteText: String, noteTitle: String) {
-        self.noteText = noteText
+    init(noteTitle: String, noteText: String) {
         self.noteTitle = noteTitle
+        self.noteText = noteText
     }
 }

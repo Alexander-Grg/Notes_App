@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotesDetailItemView" customModule="Notes_App" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="PQC-7x-ZNI" id="Jee-71-Jam"/>
+                <outlet property="noteBodyText" destination="Tcj-PK-fa3" id="mAv-wz-Rea"/>
+                <outlet property="noteTitleText" destination="4r9-dP-p5b" id="aq3-w3-ZBg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="PQC-7x-ZNI">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter note title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4r9-dP-p5b">
+                    <rect key="frame" x="0.0" y="109" width="393" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tcj-PK-fa3">
+                    <rect key="frame" x="0.0" y="158" width="393" height="660"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Mdl-xL-81i"/>
+            <constraints>
+                <constraint firstItem="Mdl-xL-81i" firstAttribute="bottom" secondItem="Tcj-PK-fa3" secondAttribute="bottom" id="0N8-GF-rQ6"/>
+                <constraint firstItem="Mdl-xL-81i" firstAttribute="trailing" secondItem="Tcj-PK-fa3" secondAttribute="trailing" id="8YX-ke-E4f"/>
+                <constraint firstItem="4r9-dP-p5b" firstAttribute="top" secondItem="Mdl-xL-81i" secondAttribute="top" constant="50" id="UrY-ie-6CC"/>
+                <constraint firstItem="Tcj-PK-fa3" firstAttribute="top" secondItem="4r9-dP-p5b" secondAttribute="bottom" constant="15" id="f9I-nY-Yqp"/>
+                <constraint firstItem="4r9-dP-p5b" firstAttribute="leading" secondItem="Mdl-xL-81i" secondAttribute="leading" id="hAd-s3-1v2"/>
+                <constraint firstItem="Tcj-PK-fa3" firstAttribute="leading" secondItem="Mdl-xL-81i" secondAttribute="leading" id="lqS-w9-v1X"/>
+                <constraint firstItem="Mdl-xL-81i" firstAttribute="trailing" secondItem="4r9-dP-p5b" secondAttribute="trailing" id="nax-R9-Jmc"/>
+            </constraints>
+            <point key="canvasLocation" x="354.96183206106866" y="-21.126760563380284"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
