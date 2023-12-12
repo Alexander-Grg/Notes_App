@@ -19,6 +19,7 @@ struct NoteModel {
     let noteTitle: String
     let noteText: String
     let noteID = UUID()
+    static let mock = NoteModel(noteTitle: "SomeTitle", noteText: "TestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTest")
     
     init(noteTitle: String, noteText: String) {
         self.noteTitle = noteTitle

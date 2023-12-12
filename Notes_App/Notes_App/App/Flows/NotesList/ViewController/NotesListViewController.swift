@@ -12,25 +12,26 @@ class NotesListViewController: UIViewController, StoryBoarded {
     @IBOutlet weak var tableView: UITableView?
     var addNoteButton = UIBarButtonItem()
     
-    weak var coordinator: MainCoordinator?
-//    private let presenter: NotesListPresenterOutput
+    var presenter: NotesListPresenter!
     
-//    init(presenter: NotesListPresenterOutput) {
-//        self.presenter = presenter
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
+    weak var coordinator: MainCoordinator?
+    var notes: [NoteModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewDidLoad()
+    }
+    
     private func configureUI() {
+        self.tableView?.register(UINib(nibName: NotesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NotesTableViewCell.identifier)
         self.setupNoteButton()
+     
+
     }
     
     private func setupNoteButton() {
@@ -41,23 +42,50 @@ class NotesListViewController: UIViewController, StoryBoarded {
 }
 
 extension NotesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension NotesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell.init()
+       guard let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.identifier,
+                                                         for: indexPath) as? NotesTableViewCell
+        else { return UITableViewCell() }
+
+        dequeuedCell.configureCell(note: self.notes[indexPath.row])
+        return dequeuedCell
     }
     
     
 }
 
-extension NotesListViewController: NotesListPresenterInput {
+extension NotesListViewController: NotesView {
+    
+    func onNotesRetrieval(notes: [NoteModel]) {
+        self.notes = notes
+        self.tableView?.reloadData()
+    }
+    
+    func onNoteAddSuccess(note: NoteModel) {
+        self.notes.append(note)
+        self.tableView?.reloadData()
+    }
+    
+    func onNoteAddFailure(message: String) {
+        print("View failed to receive data from the Presenter - \(message)")
+    }
+    
+    func onNoteDeletion(index: Int) {
+        self.notes.remove(at: index)
+        self.tableView?.reloadData()
+    }
+    
     
     @objc func createNotePressed() {
         coordinator?.toTheNoteDetail()

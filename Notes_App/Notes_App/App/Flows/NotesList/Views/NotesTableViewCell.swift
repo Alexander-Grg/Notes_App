@@ -11,6 +11,7 @@ class NotesTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var subTitle: UILabel?
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,4 +23,20 @@ class NotesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(note: NoteModel) {
+        if let title = title {
+            title.text = note.noteTitle
+        }
+        
+        if let subTitle = subTitle {
+            subTitle.text = note.noteText
+        }
+    }
+    
+}
+
+extension NotesTableViewCell: ReusableView {
+    static var identifier: String {
+        return String(describing: self)
+    }
 }
