@@ -7,22 +7,36 @@
 
 import UIKit
 
-protocol NotesListPresenterInput: AnyObject {
+protocol NotesView: AnyObject {
+    func onNotesRetrieval(notes: [NoteModel])
+    func onNoteAddSuccess(note: NoteModel)
+    func onNoteAddFailure(message: String)
+    func onNoteDeletion(index: Int)
 }
 
-protocol NotesListPresenterOutput: AnyObject {
+protocol NotesListPresenter: AnyObject {
+    init(view: NotesView)
+    func viewDidLoad()
 }
 
-final class NotesListPresenter {
-        
-    weak var viewInput: (UIViewController & NotesListPresenterInput)?
-
-    private func toNotesDetailScreen() {
-
+final class NotesListPresenterImplementation: NotesListPresenter {
+    
+    weak var view: NotesView?
+    private var items = TestSingleton.instance.notes
+    
+    required init(view: NotesView) {
+        self.view = view
     }
     
-}
-
-extension NotesListPresenter: NotesListPresenterOutput {
+    func viewDidLoad() {
+        retrieveItems()
+    }
+    
+    private func retrieveItems() {
+        view?.onNotesRetrieval(notes: self.items)
+    }
+    
     
 }
+
+//final class NotesListPresenter: Not

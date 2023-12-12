@@ -11,27 +11,18 @@ class NotesDetailViewController: UIViewController, StoryBoarded {
     
     @IBOutlet var mainView: NotesDetailItemView?
     
-//    private let presenter: NotesDetailViewPresenterOutput
     weak var coordinator: MainCoordinator?
     
-//    init(presenter: NotesDetailViewPresenterOutput) {
-//        self.presenter = presenter
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+    var presenter: NotesDetailViewPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.configureUI()
         // Do any additional setup after loading the view.
     }
     
     private func configureUI() {
-        
+        self.createSaveNoteButton()
     }
     
     private func createSaveNoteButton() {
@@ -40,10 +31,26 @@ class NotesDetailViewController: UIViewController, StoryBoarded {
     }
     
     @objc func tapSave() {
-        presenter.createNote()
+        presenter.addNote()
     }
 }
 
-extension NotesDetailViewController: NotesDetailViewPresenterInput {
+extension NotesDetailViewController: NotesDetailView {
+
+    func onNotesRetrieval(notes: [NoteModel]) {
+        
+    }
     
+    func onNoteAddSuccess(note: NoteModel) {
+        
+    }
+    
+    func onNoteAddFailure(message: String) {
+        
+    }
+    
+    func onNoteDeletion(index: Int) {
+        
+    }
+
 }
