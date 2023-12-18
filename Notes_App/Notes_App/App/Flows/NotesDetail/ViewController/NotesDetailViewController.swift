@@ -17,7 +17,9 @@ class NotesDetailViewController: UIViewController, StoryBoarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.openNote()
         self.configureUI()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -31,26 +33,20 @@ class NotesDetailViewController: UIViewController, StoryBoarded {
     }
     
     @objc func tapSave() {
-        presenter.addNote()
+        guard let oldNoteText = mainView?.noteBodyText?.text,
+              let oldNoteTitle = mainView?.noteTitleText?.text else { return }
+        
+        if presenter.note != nil {
+            presenter.editNote(newTitle: oldNoteTitle, newText: oldNoteText)
+        } else {
+            presenter.addNote()
+        }
     }
 }
 
 extension NotesDetailViewController: NotesDetailView {
 
-    func onNotesRetrieval(notes: [NoteModel]) {
-        
+    func onNoteAddSuccess(_ alert: UIAlertController) {
+        self.present(alert, animated: true)
     }
-    
-    func onNoteAddSuccess(note: NoteModel) {
-        
-    }
-    
-    func onNoteAddFailure(message: String) {
-        
-    }
-    
-    func onNoteDeletion(index: Int) {
-        
-    }
-
 }

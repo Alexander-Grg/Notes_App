@@ -22,4 +22,9 @@ class NotesDetailItemView: UIView, CustomViewProtocol {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
+    func configure(note: CDNotesModel) {
+        self.noteTitleText?.text = note.noteTitle
+        self.noteBodyText?.text = note.noteText
+    }
 }

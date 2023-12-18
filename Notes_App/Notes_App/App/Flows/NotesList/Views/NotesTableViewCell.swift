@@ -23,7 +23,7 @@ class NotesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(note: NoteModel) {
+    func configureCell(note: CDNotesModel) {
         if let title = title {
             title.text = note.noteTitle
         }
