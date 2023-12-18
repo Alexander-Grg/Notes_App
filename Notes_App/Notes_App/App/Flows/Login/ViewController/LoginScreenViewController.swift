@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginScreenViewController: UIViewController, StoryBoarded {
     
@@ -16,7 +17,7 @@ class LoginScreenViewController: UIViewController, StoryBoarded {
     }
     
     weak var coordinator: MainCoordinator?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
@@ -39,6 +40,5 @@ class LoginScreenViewController: UIViewController, StoryBoarded {
             enterButton.setTitle(title, for: .normal)
         }
     }
-    
 }
 

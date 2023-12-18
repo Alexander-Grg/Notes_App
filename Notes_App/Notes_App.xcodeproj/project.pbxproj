@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71199F0C2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71199F0A2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift */; };
+		71199F0D2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71199F0B2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift */; };
 		712B96332B1F294500E80927 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B96322B1F294500E80927 /* NoteModel.swift */; };
 		7141CB142B1F76F6008D4ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7141CB132B1F76F6008D4ECF /* AppDelegate.swift */; };
 		716590FC2B1DD533004AD840 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716590FB2B1DD533004AD840 /* LoginScreenViewController.swift */; };
@@ -25,6 +27,7 @@
 		716E34B52B21E627003133DA /* NotesDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E34B42B21E627003133DA /* NotesDetailViewPresenter.swift */; };
 		716E34BB2B22048F003133DA /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E34BA2B22048F003133DA /* CustomViewProtocol.swift */; };
 		719EA07D2B286B2200629090 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719EA07C2B286B2200629090 /* ReusableView.swift */; };
+		719FA4102B2B4E01000A2890 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FA40F2B2B4E01000A2890 /* PersistenceController.swift */; };
 		71B2668C2B1F62A400547263 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2668B2B1F62A400547263 /* SceneDelegate.swift */; };
 		71FA6E7B2B1F301100C24FD2 /* NotesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165913B2B1DEDAD004AD840 /* NotesListPresenter.swift */; };
 		71FA6E852B1F333C00C24FD2 /* EmptyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA6E842B1F333C00C24FD2 /* EmptyNotesView.swift */; };
@@ -52,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71199F0A2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNotesModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		71199F0B2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNotesModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		712B96322B1F294500E80927 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		7141CB132B1F76F6008D4ECF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		716590F42B1DD533004AD840 /* Notes_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		716E34B42B21E627003133DA /* NotesDetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailViewPresenter.swift; sourceTree = "<group>"; };
 		716E34BA2B22048F003133DA /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		719EA07C2B286B2200629090 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		719FA40F2B2B4E01000A2890 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		71B2668B2B1F62A400547263 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71FA6E842B1F333C00C24FD2 /* EmptyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNotesView.swift; sourceTree = "<group>"; };
 		71FA6E862B1F3ABF00C24FD2 /* NotesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailViewController.swift; sourceTree = "<group>"; };
@@ -111,14 +117,25 @@
 		712B96312B1F292F00E80927 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				7159DAE62B2B15B10018AC05 /* CoreData */,
 				712B96322B1F294500E80927 /* NoteModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		7159DAE62B2B15B10018AC05 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				719FA40F2B2B4E01000A2890 /* PersistenceController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		716590EB2B1DD533004AD840 = {
 			isa = PBXGroup;
 			children = (
+				71199F0A2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift */,
+				71199F0B2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift */,
 				716590F62B1DD533004AD840 /* Notes_App */,
 				716591102B1DD534004AD840 /* Notes_AppTests */,
 				7165911A2B1DD534004AD840 /* Notes_AppUITests */,
@@ -436,15 +453,18 @@
 				716E34BB2B22048F003133DA /* CustomViewProtocol.swift in Sources */,
 				71FA6E852B1F333C00C24FD2 /* EmptyNotesView.swift in Sources */,
 				712B96332B1F294500E80927 /* NoteModel.swift in Sources */,
+				71199F0D2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift in Sources */,
 				71FA6E892B1F3D2C00C24FD2 /* Coordinator.swift in Sources */,
 				71FA6E8D2B1F3E4800C24FD2 /* CoordinatorImplementation.swift in Sources */,
 				716E34B52B21E627003133DA /* NotesDetailViewPresenter.swift in Sources */,
 				71B2668C2B1F62A400547263 /* SceneDelegate.swift in Sources */,
+				71199F0C2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift in Sources */,
 				7141CB142B1F76F6008D4ECF /* AppDelegate.swift in Sources */,
 				71FA6E872B1F3ABF00C24FD2 /* NotesDetailViewController.swift in Sources */,
 				716591022B1DD533004AD840 /* Notes_App.xcdatamodeld in Sources */,
 				716591392B1DEC07004AD840 /* NotesTableViewCell.swift in Sources */,
 				71FA6E8B2B1F3D8200C24FD2 /* Storyboarded.swift in Sources */,
+				719FA4102B2B4E01000A2890 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +633,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
