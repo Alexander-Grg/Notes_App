@@ -6,9 +6,9 @@
 //
 
 import XCTest
-
+// swiftlint:disable type_name
 final class Notes_AppUITestsLaunchTests: XCTestCase {
-
+// swiftlint:enable type_name
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

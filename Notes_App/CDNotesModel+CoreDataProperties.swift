@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDNotesModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDNotesModel> {
@@ -22,6 +21,6 @@ extension CDNotesModel {
 
 }
 
-extension CDNotesModel : Identifiable {
+extension CDNotesModel: Identifiable {
 
 }

@@ -7,20 +7,11 @@
 
 import Foundation
 
-final class TestSingleton {
-    static public let instance = TestSingleton()
-    var notes: [NoteModel] = []
-
-    private init() {}
-}
-
 struct NoteModel {
-    
     let noteTitle: String
     let noteText: String
     let noteID = UUID()
-    static let mock = NoteModel(noteTitle: "SomeTitle", noteText: "TestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTestTestTextTest")
-    
+
     init(noteTitle: String, noteText: String) {
         self.noteTitle = noteTitle
         self.noteText = noteText

@@ -10,29 +10,17 @@ import UIKit
 class NotesTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var subTitle: UILabel?
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configureCell(note: CDNotesModel) {
         if let title = title {
             title.text = note.noteTitle
         }
-        
+
         if let subTitle = subTitle {
             subTitle.text = note.noteText
         }
     }
-    
+
 }
 
 extension NotesTableViewCell: ReusableView {

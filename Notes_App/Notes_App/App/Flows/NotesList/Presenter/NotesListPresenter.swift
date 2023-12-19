@@ -23,20 +23,19 @@ protocol NotesListPresenter: AnyObject {
 }
 
 final class NotesListPresenterImplementation: NotesListPresenter {
+    let context = PersistenceController.shared.container.viewContext
     weak var view: NotesView?
     weak var coordinator: MainCoordinator?
-    let context = PersistenceController.shared.container.viewContext
-    
     var items = [CDNotesModel]()
-    
+
     required init(view: NotesView) {
         self.view = view
     }
-    
+
     func viewDidLoad() {
         retrieveItems()
     }
-    
+
     private func retrieveItems() {
         do {
             items = try context.fetch(CDNotesModel.fetchRequest())
@@ -45,7 +44,7 @@ final class NotesListPresenterImplementation: NotesListPresenter {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
-    
+
     func removeItem(_ item: CDNotesModel, index: IndexPath) {
         context.delete(item)
         do {
@@ -57,7 +56,7 @@ final class NotesListPresenterImplementation: NotesListPresenter {
         self.retrieveItems()
         view?.onNoteDeletion(index: index)
     }
-    
+
     func toTheDetailView(_ note: CDNotesModel) {
         coordinator?.toTheExactNoteDetail(note: note)
     }
