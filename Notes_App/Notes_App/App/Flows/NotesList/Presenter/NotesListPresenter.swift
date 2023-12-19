@@ -10,14 +10,14 @@ import CoreData
 
 protocol NotesView: AnyObject {
     func onNotesRetrieval()
-    func onNoteDeletion()
+    func onNoteDeletion(index: IndexPath)
 }
 
 protocol NotesListPresenter: AnyObject {
     var coordinator: MainCoordinator? { get }
     var items: [CDNotesModel] { get }
     init(view: NotesView)
-    func removeItem(_ item: CDNotesModel)
+    func removeItem(_ item: CDNotesModel, index: IndexPath)
     func viewDidLoad()
     func toTheDetailView(_ note: CDNotesModel)
 }
@@ -46,7 +46,7 @@ final class NotesListPresenterImplementation: NotesListPresenter {
         }
     }
     
-    func removeItem(_ item: CDNotesModel) {
+    func removeItem(_ item: CDNotesModel, index: IndexPath) {
         context.delete(item)
         do {
             try context.save()
@@ -54,8 +54,8 @@ final class NotesListPresenterImplementation: NotesListPresenter {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        
-        view?.onNoteDeletion()
+        self.retrieveItems()
+        view?.onNoteDeletion(index: index)
     }
     
     func toTheDetailView(_ note: CDNotesModel) {

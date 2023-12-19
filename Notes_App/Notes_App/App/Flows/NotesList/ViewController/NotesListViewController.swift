@@ -42,14 +42,12 @@ extension NotesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let note = presenter.items[indexPath.row]
         presenter.toTheDetailView(note)
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let item = presenter.items[indexPath.row]
-//        TODO: To resolve an issue when after removing from CoreData the cell is still existing
         if editingStyle == .delete {
-            presenter.removeItem(item)
+            presenter.removeItem(item, index: indexPath)
         }
     }
 }
@@ -78,15 +76,12 @@ extension NotesListViewController: NotesView {
         }
     }
     
-    func onNoteDeletion() {
-        DispatchQueue.main.async {
+    func onNoteDeletion(index: IndexPath) {
             self.tableView?.reloadData()
-        }
     }
     
     
     @objc func createNotePressed() {
-//        coordinator?.toTheNoteDetail()
         presenter.coordinator?.toTheNoteDetail()
     }
 }
