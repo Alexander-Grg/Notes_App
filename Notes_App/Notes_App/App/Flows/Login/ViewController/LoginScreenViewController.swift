@@ -9,31 +9,31 @@ import UIKit
 import CoreData
 
 class LoginScreenViewController: UIViewController, StoryBoarded {
-    
+
     @IBOutlet weak var welcomingText: UILabel?
     @IBOutlet weak var enterButton: UIButton?
     @IBAction func enterButton(_ sender: Any) {
         self.coordinator?.toTheNotesList()
     }
-    
+
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
     }
-    
+
     private func configureUI() {
         self.configureWelcomingText()
         self.configureEnterButton()
     }
-    
+
     private func configureWelcomingText() {
         if let welcomingText = welcomingText {
             welcomingText.text = "WELCOME!"
         }
     }
-    
+
     private func configureEnterButton() {
         if let enterButton = enterButton {
             let title = "Start using Notes"
@@ -41,4 +41,3 @@ class LoginScreenViewController: UIViewController, StoryBoarded {
         }
     }
 }
-

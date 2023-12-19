@@ -7,9 +7,9 @@
 
 import XCTest
 @testable import Notes_App
-
+// swiftlint:disable type_name
 final class Notes_AppTests: XCTestCase {
-
+// swiftlint:enable type_name
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

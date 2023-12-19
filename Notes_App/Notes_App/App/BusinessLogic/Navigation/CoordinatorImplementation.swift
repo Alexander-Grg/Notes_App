@@ -8,43 +8,42 @@
 import UIKit
 
  class MainCoordinator: Coordinator {
-     
+
     var childCoordinators = [Coordinator]()
-    
+
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
      func start() {
-         let vc = LoginScreenViewController.instantiate()
-         vc.coordinator = self
-         navigationController.pushViewController(vc, animated: false)
+         let viewController = LoginScreenViewController.instantiate()
+         viewController.coordinator = self
+         navigationController.pushViewController(viewController, animated: false)
      }
-     
+
      func toTheNotesList() {
-         let vc = NotesListViewController.instantiate()
-         let presenter = NotesListPresenterImplementation(view: vc)
-         vc.presenter = presenter
-//         vc.coordinator = self
+         let viewController = NotesListViewController.instantiate()
+         let presenter = NotesListPresenterImplementation(view: viewController)
+         viewController.presenter = presenter
          presenter.coordinator = self
-         navigationController.pushViewController(vc, animated: true)
+         navigationController.pushViewController(viewController, animated: true)
      }
-     
+
      func toTheNoteDetail() {
-         let vc = NotesDetailViewController.instantiate()
-         let presenter = NotesDetailViewPresenterImplementation(view: vc)
-         vc.presenter = presenter
-         vc.coordinator = self
-         navigationController.pushViewController(vc, animated: true)
+         let viewController = NotesDetailViewController.instantiate()
+         let presenter = NotesDetailViewPresenterImplementation(view: viewController)
+         viewController.presenter = presenter
+         presenter.coordinator = self
+         navigationController.pushViewController(viewController, animated: true)
      }
-     
+
      func toTheExactNoteDetail(note: CDNotesModel) {
-         let vc = NotesDetailViewController.instantiate()
-         let presenter = NotesDetailViewPresenterImplementation(view: vc, note: note)
-         vc.presenter = presenter
-         vc.coordinator = self
-         navigationController.pushViewController(vc, animated: true)
+         let viewController = NotesDetailViewController.instantiate()
+         let presenter = NotesDetailViewPresenterImplementation(view: viewController, note: note)
+         viewController.presenter = presenter
+         presenter.coordinator = self
+         navigationController.pushViewController(viewController, animated: true)
      }
 }

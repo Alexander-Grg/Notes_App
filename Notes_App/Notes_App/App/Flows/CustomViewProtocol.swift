@@ -9,7 +9,7 @@ import UIKit
 
 protocol CustomViewProtocol {
     var contentView: UIView! { get }
-    
+
     func commonInit()
 }
 

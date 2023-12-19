@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+// swiftlint:disable type_name
 final class Notes_AppUITests: XCTestCase {
 
     override func setUpWithError() throws {
