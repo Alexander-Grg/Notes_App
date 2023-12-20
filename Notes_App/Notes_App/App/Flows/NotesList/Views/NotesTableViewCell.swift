@@ -27,6 +27,7 @@ class NotesTableViewCell: UITableViewCell {
             subTitle.textAlignment = .center
         } else {
             subTitle.text = noteText
+            subTitle.textAlignment = .left
         }
     }
 }
