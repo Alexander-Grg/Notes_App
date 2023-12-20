@@ -37,12 +37,14 @@ final class NotesListPresenterImplementation: NotesListPresenter {
     }
 
     private func retrieveItems() {
+
         do {
             items = try context.fetch(CDNotesModel.fetchRequest())
-            view?.onNotesRetrieval()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+
+        view?.onNotesRetrieval()
     }
 
     func removeItem(_ item: CDNotesModel, index: IndexPath) {

@@ -8,23 +8,32 @@
 import UIKit
 
 class NotesTableViewCell: UITableViewCell {
-    @IBOutlet weak var title: UILabel?
-    @IBOutlet weak var subTitle: UILabel?
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
 
     func configureCell(note: CDNotesModel) {
-        if let title = title {
-            title.text = note.noteTitle
+        guard let noteTitle = note.noteTitle,
+              let noteText = note.noteText
+        else { return }
+
+        if noteTitle.isEmpty {
+            title.text = "New note"
+        } else {
+            title.text = noteTitle
         }
 
-        if let subTitle = subTitle {
-            subTitle.text = note.noteText
+        if noteText.isEmpty {
+            subTitle.text = "No additional text"
+            subTitle.textAlignment = .center
+        } else {
+            subTitle.text = noteText
         }
     }
-
 }
+
 
 extension NotesTableViewCell: ReusableView {
     static var identifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
 }
