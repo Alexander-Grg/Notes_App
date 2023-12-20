@@ -8,16 +8,27 @@
 import UIKit
 
 class NotesCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel?
-    
-    @IBOutlet weak var text: UILabel?
-    
+    @IBOutlet weak var titleLabel: UILabel!
+
+    @IBOutlet weak var text: UILabel!
+
     func configureCell(_ note: CDNotesModel) {
-        if let titleLabel = titleLabel {
-            titleLabel.text = note.noteTitle
+        guard let noteTitle = note.noteTitle,
+              let noteText = note.noteText
+        else { return }
+
+        if noteTitle.isEmpty {
+            titleLabel.text = "New note"
+        } else {
+            titleLabel.text = noteTitle
         }
-        if let text = text {
-            text.text = note.noteText
+
+        if noteText.isEmpty {
+            text.text = "No additional text"
+            text.textAlignment = .center
+        } else {
+            text.text = noteText
+            text.textAlignment = .left
         }
     }
 }
