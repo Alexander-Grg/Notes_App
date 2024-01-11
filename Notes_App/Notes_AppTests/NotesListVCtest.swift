@@ -25,9 +25,18 @@ class MockView: NotesView {
     }
 }
 
+class PresenterMock: NotesListPresenterImplementation {
+
+    var transitionPerformed = false
+    
+    override func toTheDetailView(_ note: CDNotesModel) {
+        self.transitionPerformed = true
+    }
+}
+
 final class NotesListVCtest: XCTestCase {
     var view: MockView!
-    var presenter: NotesListPresenterImplementation!
+    var presenter: PresenterMock!
     var persistenceController: PersistenceController!
     var item: CDNotesModel!
     var context: NSManagedObjectContext!
@@ -37,7 +46,7 @@ final class NotesListVCtest: XCTestCase {
         view = MockView()
         persistenceController = PersistenceController.init(inMemory: true)
         context = persistenceController.container.viewContext
-        presenter = NotesListPresenterImplementation(view: view, context: context)
+        presenter = PresenterMock(view: view, context: context)
 
         item = CDNotesModel(context: context)
         item.noteText = "TestText"
@@ -71,7 +80,7 @@ final class NotesListVCtest: XCTestCase {
 
     func testTransition() throws {
         presenter.toTheDetailView(item)
-//        XCTAssertTrue(view.)
+        XCTAssertTrue(presenter.transitionPerformed)
     }
 }
 

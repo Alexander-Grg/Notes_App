@@ -22,7 +22,7 @@ protocol NotesListPresenter: AnyObject {
     func toTheDetailView(_ note: CDNotesModel)
 }
 
-final class NotesListPresenterImplementation: NotesListPresenter {
+ class NotesListPresenterImplementation: NotesListPresenter {
     let context: NSManagedObjectContext
     weak var view: NotesView?
     weak var coordinator: MainCoordinator?
