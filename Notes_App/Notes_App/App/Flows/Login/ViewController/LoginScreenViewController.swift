@@ -13,7 +13,7 @@ class LoginScreenViewController: UIViewController, StoryBoarded {
     @IBOutlet weak var welcomingText: UILabel?
     @IBOutlet weak var enterButton: UIButton?
     @IBAction func enterButton(_ sender: Any) {
-        self.coordinator?.toTheNotesList()
+        self.coordinator?.toTheNotesList(context: PersistenceController.shared.container.viewContext)
     }
 
     weak var coordinator: MainCoordinator?
