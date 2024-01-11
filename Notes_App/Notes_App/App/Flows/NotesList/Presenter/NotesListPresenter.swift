@@ -16,20 +16,21 @@ protocol NotesView: AnyObject {
 protocol NotesListPresenter: AnyObject {
     var coordinator: MainCoordinator? { get }
     var items: [CDNotesModel] { get }
-    init(view: NotesView)
+    init(view: NotesView, context: NSManagedObjectContext)
     func removeItem(_ item: CDNotesModel, index: IndexPath)
     func viewDidLoad()
     func toTheDetailView(_ note: CDNotesModel)
 }
 
-final class NotesListPresenterImplementation: NotesListPresenter {
-    let context = PersistenceController.shared.container.viewContext
+ class NotesListPresenterImplementation: NotesListPresenter {
+    let context: NSManagedObjectContext
     weak var view: NotesView?
     weak var coordinator: MainCoordinator?
     var items = [CDNotesModel]()
 
-    required init(view: NotesView) {
+    required init(view: NotesView, context: NSManagedObjectContext) {
         self.view = view
+        self.context = context
     }
 
     func viewDidLoad() {

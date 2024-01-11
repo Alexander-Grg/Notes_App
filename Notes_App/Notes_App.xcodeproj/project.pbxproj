@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71125DE32B35931300544C14 /* LoginVCtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71125DE22B35931300544C14 /* LoginVCtest.swift */; };
 		71199F0C2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71199F0A2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift */; };
 		71199F0D2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71199F0B2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift */; };
 		712B96332B1F294500E80927 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B96322B1F294500E80927 /* NoteModel.swift */; };
@@ -16,7 +17,6 @@
 		716591022B1DD533004AD840 /* Notes_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 716591002B1DD533004AD840 /* Notes_App.xcdatamodeld */; };
 		716591042B1DD534004AD840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716591032B1DD534004AD840 /* Assets.xcassets */; };
 		716591072B1DD534004AD840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716591052B1DD534004AD840 /* LaunchScreen.storyboard */; };
-		716591122B1DD534004AD840 /* Notes_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716591112B1DD534004AD840 /* Notes_AppTests.swift */; };
 		7165911C2B1DD534004AD840 /* Notes_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165911B2B1DD534004AD840 /* Notes_AppUITests.swift */; };
 		7165911E2B1DD534004AD840 /* Notes_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165911D2B1DD534004AD840 /* Notes_AppUITestsLaunchTests.swift */; };
 		7165912B2B1DE778004AD840 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165912A2B1DE778004AD840 /* NotesListViewController.swift */; };
@@ -26,13 +26,16 @@
 		716E34B12B21B711003133DA /* NotesDetailItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716E34B02B21B711003133DA /* NotesDetailItemView.xib */; };
 		716E34B52B21E627003133DA /* NotesDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E34B42B21E627003133DA /* NotesDetailViewPresenter.swift */; };
 		716E34BB2B22048F003133DA /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E34BA2B22048F003133DA /* CustomViewProtocol.swift */; };
+		716F630E2B4FE4F70089D773 /* MainCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F630D2B4FE4F70089D773 /* MainCoordinatorTest.swift */; };
+		7197EEA82B4C13F900C90D27 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197EEA72B4C13F900C90D27 /* LoginVCTests.swift */; };
+		7197EEAC2B4C2ED000C90D27 /* NotesListVCtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197EEAB2B4C2ED000C90D27 /* NotesListVCtest.swift */; };
 		719EA07D2B286B2200629090 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719EA07C2B286B2200629090 /* ReusableView.swift */; };
 		719FA4102B2B4E01000A2890 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FA40F2B2B4E01000A2890 /* PersistenceController.swift */; };
 		71B2668C2B1F62A400547263 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2668B2B1F62A400547263 /* SceneDelegate.swift */; };
+		71B601A92B4EA093009526EC /* CoreDataStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B601A82B4EA093009526EC /* CoreDataStackTest.swift */; };
 		71C594F82B31C85900409642 /* NotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C594F62B31C85900409642 /* NotesCollectionViewCell.swift */; };
 		71C594FB2B31C99C00409642 /* NotesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C594FA2B31C99C00409642 /* NotesCollectionViewCell.xib */; };
 		71FA6E7B2B1F301100C24FD2 /* NotesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165913B2B1DEDAD004AD840 /* NotesListPresenter.swift */; };
-		71FA6E852B1F333C00C24FD2 /* EmptyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA6E842B1F333C00C24FD2 /* EmptyNotesView.swift */; };
 		71FA6E872B1F3ABF00C24FD2 /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA6E862B1F3ABF00C24FD2 /* NotesDetailViewController.swift */; };
 		71FA6E892B1F3D2C00C24FD2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA6E882B1F3D2C00C24FD2 /* Coordinator.swift */; };
 		71FA6E8B2B1F3D8200C24FD2 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA6E8A2B1F3D8200C24FD2 /* Storyboarded.swift */; };
@@ -57,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71125DE22B35931300544C14 /* LoginVCtest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCtest.swift; sourceTree = "<group>"; };
 		71199F0A2B2DE55B006A11C4 /* CDNotesModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNotesModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		71199F0B2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNotesModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		712B96322B1F294500E80927 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
@@ -69,7 +73,6 @@
 		716591062B1DD534004AD840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		716591082B1DD534004AD840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7165910D2B1DD534004AD840 /* Notes_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Notes_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		716591112B1DD534004AD840 /* Notes_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_AppTests.swift; sourceTree = "<group>"; };
 		716591172B1DD534004AD840 /* Notes_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Notes_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7165911B2B1DD534004AD840 /* Notes_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_AppUITests.swift; sourceTree = "<group>"; };
 		7165911D2B1DD534004AD840 /* Notes_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -81,12 +84,15 @@
 		716E34B02B21B711003133DA /* NotesDetailItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesDetailItemView.xib; sourceTree = "<group>"; };
 		716E34B42B21E627003133DA /* NotesDetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailViewPresenter.swift; sourceTree = "<group>"; };
 		716E34BA2B22048F003133DA /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
+		716F630D2B4FE4F70089D773 /* MainCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTest.swift; sourceTree = "<group>"; };
+		7197EEA72B4C13F900C90D27 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
+		7197EEAB2B4C2ED000C90D27 /* NotesListVCtest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListVCtest.swift; sourceTree = "<group>"; };
 		719EA07C2B286B2200629090 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		719FA40F2B2B4E01000A2890 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		71B2668B2B1F62A400547263 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		71B601A82B4EA093009526EC /* CoreDataStackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTest.swift; sourceTree = "<group>"; };
 		71C594F62B31C85900409642 /* NotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCollectionViewCell.swift; sourceTree = "<group>"; };
 		71C594FA2B31C99C00409642 /* NotesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesCollectionViewCell.xib; sourceTree = "<group>"; };
-		71FA6E842B1F333C00C24FD2 /* EmptyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNotesView.swift; sourceTree = "<group>"; };
 		71FA6E862B1F3ABF00C24FD2 /* NotesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailViewController.swift; sourceTree = "<group>"; };
 		71FA6E882B1F3D2C00C24FD2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		71FA6E8A2B1F3D8200C24FD2 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -173,7 +179,10 @@
 		716591102B1DD534004AD840 /* Notes_AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				716591112B1DD534004AD840 /* Notes_AppTests.swift */,
+				71125DE22B35931300544C14 /* LoginVCtest.swift */,
+				7197EEAB2B4C2ED000C90D27 /* NotesListVCtest.swift */,
+				71B601A82B4EA093009526EC /* CoreDataStackTest.swift */,
+				716F630D2B4FE4F70089D773 /* MainCoordinatorTest.swift */,
 			);
 			path = Notes_AppTests;
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 			children = (
 				7165911B2B1DD534004AD840 /* Notes_AppUITests.swift */,
 				7165911D2B1DD534004AD840 /* Notes_AppUITestsLaunchTests.swift */,
+				7197EEA72B4C13F900C90D27 /* LoginVCTests.swift */,
 			);
 			path = Notes_AppUITests;
 			sourceTree = "<group>";
@@ -234,7 +244,6 @@
 			children = (
 				716591372B1DEC07004AD840 /* NotesTableViewCell.swift */,
 				716591382B1DEC07004AD840 /* NotesTableViewCell.xib */,
-				71FA6E842B1F333C00C24FD2 /* EmptyNotesView.swift */,
 				71C594F62B31C85900409642 /* NotesCollectionViewCell.swift */,
 				71C594FA2B31C99C00409642 /* NotesCollectionViewCell.xib */,
 			);
@@ -487,7 +496,6 @@
 				716590FC2B1DD533004AD840 /* LoginScreenViewController.swift in Sources */,
 				7165912B2B1DE778004AD840 /* NotesListViewController.swift in Sources */,
 				716E34BB2B22048F003133DA /* CustomViewProtocol.swift in Sources */,
-				71FA6E852B1F333C00C24FD2 /* EmptyNotesView.swift in Sources */,
 				712B96332B1F294500E80927 /* NoteModel.swift in Sources */,
 				71199F0D2B2DE55B006A11C4 /* CDNotesModel+CoreDataProperties.swift in Sources */,
 				71FA6E892B1F3D2C00C24FD2 /* Coordinator.swift in Sources */,
@@ -509,7 +517,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716591122B1DD534004AD840 /* Notes_AppTests.swift in Sources */,
+				71125DE32B35931300544C14 /* LoginVCtest.swift in Sources */,
+				7197EEAC2B4C2ED000C90D27 /* NotesListVCtest.swift in Sources */,
+				716F630E2B4FE4F70089D773 /* MainCoordinatorTest.swift in Sources */,
+				71B601A92B4EA093009526EC /* CoreDataStackTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7165911E2B1DD534004AD840 /* Notes_AppUITestsLaunchTests.swift in Sources */,
+				7197EEA82B4C13F900C90D27 /* LoginVCTests.swift in Sources */,
 				7165911C2B1DD534004AD840 /* Notes_AppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

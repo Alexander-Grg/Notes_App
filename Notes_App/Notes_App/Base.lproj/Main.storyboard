@@ -36,6 +36,9 @@
                                         <rect key="frame" x="0.0" y="36" width="75" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="loginButton"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="enterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aqf-UB-JAd"/>
                                         </connections>
@@ -86,12 +89,15 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIndicator" value="collectionView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="sVr-fs-YM8" id="q0Q-TG-Pgv"/>
                                     <outlet property="delegate" destination="sVr-fs-YM8" id="DED-Yw-OAs"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-Sd-MWa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-Sd-MWa">
                                 <rect key="frame" x="0.0" y="59" width="393" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -105,6 +111,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="tableView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="sVr-fs-YM8" id="9WX-g8-PI0"/>
                                     <outlet property="delegate" destination="sVr-fs-YM8" id="diZ-bu-pZ1"/>
@@ -116,6 +125,9 @@
                                     <segment title="Table"/>
                                     <segment title="Grid"/>
                                 </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="tableGrid"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="switchControl:" destination="sVr-fs-YM8" eventType="valueChanged" id="ZHY-iy-lAn"/>
                                 </connections>
